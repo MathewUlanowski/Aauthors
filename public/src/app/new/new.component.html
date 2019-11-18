@@ -1,1 +1,6 @@
-<p>new works!</p>
+<a (click)="Home()" class="clickables">Home</a>
+<h3>Add a new author:</h3>
+    <h3>Name:</h3>
+    <input type="text" [(ngModel)]="Author.name" name="name">
+    <button (click)="CreateAuthor()" [routerLink]="['home']">Submit</button>
+    <button (click)="Home()" >Cancel</button>

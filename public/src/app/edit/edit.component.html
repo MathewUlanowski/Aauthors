@@ -1,1 +1,6 @@
-<p>edit works!</p>
+<a (click)="Home()" class="clickables">Home</a>
+<h3>Edit a author:</h3>
+    <h3>Name:</h3>
+    <input type="text" value="{{ authorEdit.name }}" [(ngModel)]="authorEdit.name" name="name">
+    <button (click)="EditAuthor()" [routerLink]="['home']">Submit</button>
+    <button (click)="Home()" >Cancel</button>

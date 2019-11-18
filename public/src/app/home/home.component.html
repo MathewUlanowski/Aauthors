@@ -1,14 +1,14 @@
-<h1>Favorite Authors</h1>
 <div class="container" *ngIf="allAuthors">
     <p>We have quotes!</p>
+    <a (click)="addAuthor()" class="clickables">Add an author</a>
     <table>
         <th>Name: </th>
         <th>Available Actions: </th>
-        <tr *ngFor="var a of allAuthors">
-            <td>{{a.name}}</td>
+        <tr *ngFor="let author of allAuthors; let i = index">
+            <td>{{author.name}}</td>
             <td>
-                <a [routerLink]="['/edit/',a._id]">Edit</a>
-                <a (click)="delete(a._id)">Delete</a>
+                <button (click)="edit(author._id)" class="clickables">Edit</button> | 
+                <button (click)="delete(author._id, i)" class="clickables">Delete</button>
             </td>
         </tr>
     </table>

@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 //import httpservice and declare variables 
 import { HttpService } from './../http.service'
+import { Router } from '@angular/router';
+
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -8,7 +11,10 @@ import { HttpService } from './../http.service'
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private _http:HttpService) { }
+  constructor(
+      private _http: HttpService,
+      private _router: Router,
+    ) { }
   allAuthors:any;
   ngOnInit() {
     console.log('made it to the home route')
@@ -25,6 +31,18 @@ export class HomeComponent implements OnInit {
       else {
         this.allAuthors = data['allAuthors'];
       }
+    })
+  }
+  addAuthor(){
+    this._router.navigate(['new'])
+  }
+  edit(id){
+    this._router.navigate(['edit', id])
+  }
+  delete(id, i){
+    this._http.deleteAuthor(id).subscribe(data => {
+      console.log(data)
+      if(data['status']) this.allAuthors.splice(i,1)
     })
   }
 }

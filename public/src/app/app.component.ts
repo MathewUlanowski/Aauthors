@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpService } from './http.service';
+import { Router } from '@angular/router';
+
 
 
 @Component({
@@ -7,7 +9,10 @@ import { HttpService } from './http.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  constructor(private _http:HttpService){}
+export class AppComponent implements OnInit {
+  constructor(private _http:HttpService, private _router: Router){}
   title = 'public';
+  ngOnInit(){
+    this._router.navigate(['home'])
+  };
 }

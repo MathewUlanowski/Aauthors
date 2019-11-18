@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { NewComponent } from './new/new.component';
 import { EditComponent } from './edit/edit.component'
+import { FormsModule } from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { EditComponent } from './edit/edit.component'
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     HttpClientModule
   ],
