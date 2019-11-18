@@ -1,0 +1,15 @@
+<h1>Favorite Authors</h1>
+<div class="container" *ngIf="allAuthors">
+    <p>We have quotes!</p>
+    <table>
+        <th>Name: </th>
+        <th>Available Actions: </th>
+        <tr *ngFor="var a of allAuthors">
+            <td>{{a.name}}</td>
+            <td>
+                <a [routerLink]="['/edit/',a._id]">Edit</a>
+                <a (click)="delete(a._id)">Delete</a>
+            </td>
+        </tr>
+    </table>
+</div>
