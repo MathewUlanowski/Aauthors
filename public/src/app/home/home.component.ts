@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AppComponent } from '../app.component';
 //import httpservice and declare variables 
-import { HttpService } from './../http.service'
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -8,7 +8,7 @@ import { HttpService } from './../http.service'
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private _http:HttpService) { }
+  constructor(private _http:AppComponent) { }
   allAuthors:any;
   ngOnInit() {
     this.getAuthorsFromHttp();
