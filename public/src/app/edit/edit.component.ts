@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-edit',
@@ -8,7 +7,7 @@ import { AppComponent } from '../app.component';
 })
 export class EditComponent implements OnInit {
 
-  constructor(private _http: AppComponent) { }
+  constructor() { }
 
   ngOnInit() {
   }

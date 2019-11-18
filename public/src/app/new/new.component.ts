@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-new',
@@ -8,7 +7,7 @@ import { AppComponent } from '../app.component';
 })
 export class NewComponent implements OnInit {
 
-  constructor(private _http: AppComponent) { }
+  constructor() { }
 
   ngOnInit() {
   }

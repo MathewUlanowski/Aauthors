@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpService } from './http.service';
 
 
 @Component({
@@ -8,6 +8,6 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(private _http:HttpClient){}
+  constructor(private _http:HttpService){}
   title = 'public';
 }

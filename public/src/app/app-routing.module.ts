@@ -8,6 +8,7 @@ const routes: Routes = [
   {path:'',component:HomeComponent},
   {path:'new',component:NewComponent},
   {path:'edit/:id',component:EditComponent},
+  {path:'home', component: HomeComponent}
 ];
 
 @NgModule({
